@@ -8,7 +8,9 @@
 <body>
     <h1>サイト</h1>
 
-    <iframe src="https://tver.jp/cks/ppid" width="600" height="400" id="tver-iframe"></iframe>
+    <!--<iframe src="https://tver.jp/cks/ppid" width="600" height="400" id="tver-iframe"></iframe>-->
+    <iframe src="http://localhost:4000/tver_page.html" width="600" height="400" id="tver-iframe"></iframe>
+    
     <!-- ボタンでiframe内のページにメッセージを送信 -->
     <button id="send-message">iframe にメッセージ送信</button>
 
@@ -21,7 +23,8 @@
         const responseText = document.getElementById('iframe-response');
 
         sendMessageButton.addEventListener('click', () => {
-            iframe.contentWindow.postMessage('from サイト', 'https://tver.jp');
+            //iframe.contentWindow.postMessage('from サイト', 'https://tver.jp');
+            iframe.contentWindow.postMessage('from サイト', 'http://localhost:4000');
         });
 
         // iframe からのメッセージを受信
