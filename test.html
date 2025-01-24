@@ -9,7 +9,7 @@
     <h1>ECサイト</h1>
 
     <!-- iframeを生成 -->
-    <iframe src="https://tver.jp/cks/ppid" width="600" height="400" id="tver-iframe"></iframe>
+    <iframe src="https://https-tester-5c1e45.gitlab.io/test.html" width="600" height="400" id="tver-iframe"></iframe>
 
     <!-- ボタンでiframe内のページにメッセージを送信 -->
     <button id="send-message">iframe にメッセージ送信</button>
@@ -23,12 +23,12 @@
         const responseText = document.getElementById('iframe-response');
 
         sendMessageButton.addEventListener('click', () => {
-            iframe.contentWindow.postMessage('from ECサイト', 'https://tver.jp');
+            iframe.contentWindow.postMessage('from ECサイト', 'https://https-tester-5c1e45.gitlab.io');
         });
 
         // iframe からのメッセージを受信
         window.addEventListener('message', (event) => {
-            //if (event.origin !== 'http://tver.test.com:4000') return; // 安全のためオリジンを確認
+            //if (event.origin !== 'https://https-tester-5c1e45.gitlab.io') return; // 安全のためオリジンを確認
             console.log('iframeから受信:', event.data);
             responseText.textContent = event.data;
         });
