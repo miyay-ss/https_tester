@@ -6,11 +6,11 @@
     <title>EC Site</title>
 </head>
 <body>
-    <h1>サイト</h1>
+    <h1>ECサイト</h1>
 
-    <!--<iframe src="https://tver.jp/cks/ppid" width="600" height="400" id="tver-iframe"></iframe>-->
-    <iframe src="http://localhost:4000/tver_page.html" width="600" height="400" id="tver-iframe"></iframe>
-    
+    <!-- iframeを生成 -->
+    <iframe src="http://tver.test.com:4000/tver_page.html" width="600" height="400" id="tver-iframe"></iframe>
+
     <!-- ボタンでiframe内のページにメッセージを送信 -->
     <button id="send-message">iframe にメッセージ送信</button>
 
@@ -23,17 +23,15 @@
         const responseText = document.getElementById('iframe-response');
 
         sendMessageButton.addEventListener('click', () => {
-            //iframe.contentWindow.postMessage('from サイト', 'https://tver.jp');
-            iframe.contentWindow.postMessage('from サイト', 'http://localhost:4000');
+            iframe.contentWindow.postMessage('from ECサイト', 'http://tver.test.com:4000');
         });
 
-        /*
         // iframe からのメッセージを受信
         window.addEventListener('message', (event) => {
+            //if (event.origin !== 'http://tver.test.com:4000') return; // 安全のためオリジンを確認
             console.log('iframeから受信:', event.data);
             responseText.textContent = event.data;
         });
-        */
     </script>
 </body>
 </html>
