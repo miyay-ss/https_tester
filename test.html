@@ -28,7 +28,7 @@
 
         // iframe からのメッセージを受信
         window.addEventListener('message', (event) => {
-            //if (event.origin !== 'https://https-tester-5c1e45.gitlab.io') return; // 安全のためオリジンを確認
+            if (event.origin !== 'https://https-tester-5c1e45.gitlab.io') return; // 安全のためオリジンを確認
             console.log('iframeから受信:', event.data);
             responseText.textContent = event.data;
         });
