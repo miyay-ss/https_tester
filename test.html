@@ -6,10 +6,10 @@
     <title>EC Site</title>
 </head>
 <body>
-    <h1>ECサイト</h1>
+    <h1>親サイト</h1>
 
     <!-- iframeを生成 -->
-    <iframe src="https://https-tester-5c1e45.gitlab.io/test.html" width="600" height="400" id="tver-iframe"></iframe>
+    <iframe src="https://https-tester-5c1e45.gitlab.io/test.html" width="600" height="400" id="parent-iframe"></iframe>
 
     <!-- ボタンでiframe内のページにメッセージを送信 -->
     <button id="send-message">iframe にメッセージ送信</button>
@@ -18,12 +18,12 @@
     <p>iframeからのメッセージ: <span id="iframe-response">なし</span></p>
 
     <script>
-        const iframe = document.getElementById('tver-iframe');
+        const iframe = document.getElementById('parent-iframe');
         const sendMessageButton = document.getElementById('send-message');
         const responseText = document.getElementById('iframe-response');
 
         sendMessageButton.addEventListener('click', () => {
-            iframe.contentWindow.postMessage('from ECサイト', 'https://https-tester-5c1e45.gitlab.io');
+            iframe.contentWindow.postMessage('from 親サイト', 'https://https-tester-5c1e45.gitlab.io');
         });
 
         // iframe からのメッセージを受信
